@@ -84,4 +84,68 @@ public class LinkList {
         }
         System.out.println("null");
     }
+
+        //delete at first
+
+        public void DeleteFirst()
+        {
+            if(head==null)
+            {
+                System.out.println("linked list is empty");
+            }
+
+            head.next=null;
+        }
+
+        //delete at last
+
+        public void DeleteLast()
+        {
+            if(head==null)
+            {
+                System.out.println("linked list is empty");
+
+            }
+
+            if(head.next==null)
+            {
+                head=null;
+            }
+
+            Node temp =head;
+            while(temp.next.next!=null)
+            {
+                temp=temp.next;
+            }
+            temp.next=null;
+        }
+
+        public void DeleteAtPosition(int position)
+        {
+            if(head==null)
+            {
+                System.out.println("linked list is empty");
+
+            }
+
+            if(position==0)
+            {
+                head=head.next;
+            }
+
+            Node temp=head;
+
+            for(int i=0; i<position-1 && temp!=null; i++)
+            {
+                temp=temp.next;
+            }
+
+            if(temp == null || temp.next==null)
+            {
+                System.out.println("linked list is empty");
+
+            }
+                temp.next=temp.next.next;
+        }
+    
 }
